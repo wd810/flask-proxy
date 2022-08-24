@@ -3,7 +3,7 @@ from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
-CORS(app, origins=["https://welikenodes.onelike.biz/", "http://localhost:3000"])
+CORS(app, origins=["https://welikenodes.onelike.biz", "http://localhost:3000"])
 app.debug = True
 
 @app.route("/", methods=['GET'])
