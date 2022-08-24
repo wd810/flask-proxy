@@ -3,7 +3,7 @@ from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://welikenodes.onelike.biz/", "http://localhost:3000"])
 app.debug = True
 
 @app.route("/", methods=['GET'])
@@ -11,7 +11,7 @@ def home():
     url = request.args['url']
     try:
         data = requests.get(url)
-        print(data.json())
+        # print(data.json())
         return data.json()
     except:
         raise Exception("Invalid URL")
